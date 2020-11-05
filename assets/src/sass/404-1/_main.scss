@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+body {
+	font-family: "Coming Soon", cursive;
+	background: url("../../src/images/star-bg.jpg") no-repeat;
+	background-attachment: fixed;
+
+	a {
+		position: relative;
+		&:after {
+			content: "";
+			display: block;
+			width: 0px;
+			height: 5px;
+			position: absolute;
+			bottom: 46%;
+			left: -10%;
+			background: $color-white;
+			transition: all 0.2s ease-in;
+
+			@include breakpoint(tablet) {
+				height: 2px;
+			}
+		}
+
+		&:hover {
+			color: $color-white;
+			&:after {
+				width: 120%;
+			}
+		}
+	}
+
+	header {
+		nav {
+			.nav-links {
+				display: flex;
+				justify-content: space-around;
+				padding: 80px;
+
+				@include breakpoint(mobile) {
+					padding: 25px;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+				li {
+					@include breakpoint(mobile) {
+						margin: 13px;
+					}
+					a {
+						font-size: 25px;
+						color: $color-blur;
+
+						@include breakpoint(mobile) {
+							font-size: 19px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section {
+		.container {
+			.wrapper {
+				z-index: 1;
+
+				@include breakpoint(tablet) {
+					padding: 35px;
+				}
+
+				.content {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					padding-top: 50px;
+
+					.title {
+						font-size: 60px;
+						color: $color-white;
+
+						@include breakpoint(tablet) {
+							font-size: 50px;
+						}
+
+						@include breakpoint(mobile) {
+							font-size: 30px;
+							text-align: center;
+						}
+					}
+
+					.text__404 {
+						color: white;
+						font-size: 330px;
+						margin-top: 50px;
+						text-shadow: 8px 9px 0px $color-red;
+						font-family: "Alfa Slab One", cursive;
+
+						@include breakpoint(tablet) {
+							font-size: 300px;
+						}
+
+						@include breakpoint(mobile) {
+							font-size: 150px;
+						}
+					}
+
+					.cta {
+						margin-top: 100px;
+						font-size: 35px;
+
+						a {
+							color: $color-white;
+
+							&:after {
+								@include breakpoint(tablet) {
+									height: 4px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&:after {
+				content: "";
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+				position: fixed;
+				top: 0;
+				background: $color-overlay;
+				overflow: hidden;
+				display: block;
+			}
+		}
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		@include breakpoint(mobile) {
+			font-size: 13px;
+			padding: 0 35px;
+			margin-top:0px;
+		}
+
+		span {
+			color: $color-white;
+			border-right: 1px solid $color-white;
+			padding-right: 10px;
+			margin-right: 10px;
+		}
+
+		a {
+			&:hover {
+				&:after {
+					width: 105%;
+				}
+			}
+
+			&:after {
+				left: -2.5%;
+			}
+		}
+	}
+}

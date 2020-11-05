@@ -1,0 +1,6 @@
+@mixin icon($icon, $options...) {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: sassvg($icon, $options...);
+}
